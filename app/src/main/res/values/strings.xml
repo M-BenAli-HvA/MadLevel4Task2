@@ -6,4 +6,7 @@
     <string name="win_label">You win!</string>
     <string name="lose_label">You lose!</string>
     <string name="draw_label">A draw!</string>
+    <string name="versus_label">V.S.</string>
+    <string name="player_label">You</string>
+    <string name="computer_label">Computer</string>
 </resources>

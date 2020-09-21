@@ -90,6 +90,69 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.386" />
+        app:layout_constraintVertical_bias="0.319" />
+
+
+    <ImageView
+        android:id="@+id/img_view_player_move"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="120dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:src="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/game_buttons"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_view_computer_move"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="120dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:src="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/game_buttons"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_computer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/computer_label"
+        app:layout_constraintBottom_toTopOf="@+id/game_buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_view_computer_move"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <TextView
+        android:id="@+id/tv_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="76dp"
+        android:text="@string/player_label"
+        app:layout_constraintBottom_toTopOf="@+id/game_buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_view_player_move"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_versus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="148dp"
+        android:fontFamily="serif"
+        android:text="@string/versus_label"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/game_buttons"
+        app:layout_constraintEnd_toStartOf="@+id/img_view_player_move"
+        app:layout_constraintStart_toEndOf="@+id/img_view_computer_move" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

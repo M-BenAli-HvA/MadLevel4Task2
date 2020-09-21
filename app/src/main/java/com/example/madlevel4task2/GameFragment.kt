@@ -69,5 +69,18 @@ class GameFragment : Fragment() {
             GameResult.DRAW-> tv_result_message.setText(R.string.draw_label)
             GameResult.LOSE -> tv_result_message.setText(R.string.lose_label)
         }
+
+        when(game.playerMove) {
+            GameMoves.SCISSORS -> img_view_player_move.setImageResource(R.drawable.scissors)
+            GameMoves.PAPER -> img_view_player_move.setImageResource(R.drawable.paper)
+            GameMoves.ROCK -> img_view_player_move.setImageResource(R.drawable.rock)
+        }
+
+        when(game.computerMove) {
+            GameMoves.SCISSORS -> img_view_computer_move.setImageResource(R.drawable.scissors)
+            GameMoves.PAPER -> img_view_computer_move.setImageResource(R.drawable.paper)
+            GameMoves.ROCK -> img_view_computer_move.setImageResource(R.drawable.rock)
+        }
+
     }
 }
