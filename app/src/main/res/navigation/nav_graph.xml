@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_game">
         <action
             android:id="@+id/action_GameFragment_to_GameHistoryFragment"
-            app:destination="@id/gameHistory" />
+            app:destination="@id/GameHistory" />
     </fragment>
     <fragment
-        android:id="@+id/gameHistory"
+        android:id="@+id/GameHistory"
         android:name="com.example.madlevel4task2.GameHistory"
         android:label="fragment_game_history"
         tools:layout="@layout/fragment_game_history" />
