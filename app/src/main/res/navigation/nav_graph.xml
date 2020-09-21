@@ -9,6 +9,14 @@
         android:id="@+id/GameFragment"
         android:name="com.example.madlevel4task2.GameFragment"
         android:label="fragment_game"
-        tools:layout="@layout/fragment_game" >
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_GameFragment_to_GameHistoryFragment"
+            app:destination="@id/gameHistory" />
     </fragment>
+    <fragment
+        android:id="@+id/gameHistory"
+        android:name="com.example.madlevel4task2.GameHistory"
+        android:label="fragment_game_history"
+        tools:layout="@layout/fragment_game_history" />
 </navigation>

@@ -9,4 +9,10 @@
     <string name="versus_label">V.S.</string>
     <string name="player_label">You</string>
     <string name="computer_label">Computer</string>
+
+    <string name="game_history">Game history</string>
+    <string name="computer_win">Computer wins!</string>
+    <string name="game_draw">Draw</string>
+    <string name="player_win">Player wins!</string>
+
 </resources>
