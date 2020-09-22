@@ -30,13 +30,15 @@
         android:id="@+id/img_view_player_move"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="4dp"
         android:background="#FFFFFF"
         android:backgroundTint="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toStartOf="@+id/tv_versus"
+        app:layout_constraintBottom_toTopOf="@+id/tv_player_label"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_versus"
         app:layout_constraintTop_toBottomOf="@+id/tv_game_date"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -44,13 +46,11 @@
         android:id="@+id/img_view_computer_move"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
         android:background="#FFFFFF"
         android:backgroundTint="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_versus"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_game_date"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -58,38 +58,38 @@
         android:id="@+id/tv_versus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="44dp"
         android:fontFamily="serif"
         android:text="@string/versus_label"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/img_view_computer_move"
+        app:layout_constraintEnd_toStartOf="@+id/img_view_player_move"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/img_view_player_move" />
+        app:layout_constraintStart_toEndOf="@+id/img_view_computer_move" />
 
     <TextView
         android:id="@+id/tv_computer_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="4dp"
         android:text="@string/computer_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_view_player_move"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_player_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="96dp"
         android:text="@string/player_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_view_computer_move"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

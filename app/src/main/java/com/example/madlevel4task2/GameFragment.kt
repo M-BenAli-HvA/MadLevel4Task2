@@ -10,13 +10,21 @@ import androidx.fragment.app.Fragment
 import com.example.madlevel4task2.models.Game
 import com.example.madlevel4task2.models.GameMoves
 import com.example.madlevel4task2.models.GameResult
+import com.example.madlevel4task2.repository.GameRepository
 import kotlinx.android.synthetic.main.fragment_game.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.time.Instant
 import java.util.*
 
 class GameFragment : Fragment() {
 
+    private val mainScope = CoroutineScope(Dispatchers.Main)
     private val TAG = "GameFragment"
+
+    private lateinit var gameRepository: GameRepository
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +36,7 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        gameRepository = GameRepository(requireContext())
         initViews()
     }
 
@@ -58,6 +67,11 @@ class GameFragment : Fragment() {
             )
             game.startGame()
             Log.i(TAG, game.toString())
+            mainScope.launch {
+                withContext(Dispatchers.IO) {
+                    gameRepository.insertGame(game)
+                }
+            }
             displayResult(game)
         }
     }
@@ -81,6 +95,5 @@ class GameFragment : Fragment() {
             GameMoves.PAPER -> img_view_computer_move.setImageResource(R.drawable.paper)
             GameMoves.ROCK -> img_view_computer_move.setImageResource(R.drawable.rock)
         }
-
     }
 }

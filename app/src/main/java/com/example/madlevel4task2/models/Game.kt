@@ -1,6 +1,8 @@
 package com.example.madlevel4task2.models
 
-import java.lang.StringBuilder
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.util.*
 
 
@@ -16,9 +18,19 @@ enum class GameResult {
     LOSE
 }
 
+@Entity(tableName = "game_table")
 class Game(
-    var playerMove: GameMoves, var computerMove: GameMoves,
-    var date: Date, var result: GameResult? = null
+    @ColumnInfo(name = "player_move")
+    var playerMove: GameMoves,
+    @ColumnInfo(name = "computer_move")
+    var computerMove: GameMoves,
+    @ColumnInfo()
+    var date: Date,
+    @ColumnInfo()
+    var result: GameResult? = null,
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    var id: Long? = null
 ) {
 
     fun startGame() {
