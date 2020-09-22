@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madlevel4task2.R
 import com.example.madlevel4task2.models.Game
-import com.example.madlevel4task2.models.GameMoves
 import com.example.madlevel4task2.models.GameResult
 import kotlinx.android.synthetic.main.item_game.view.*
 
@@ -18,17 +17,8 @@ class GameAdapter(private val games: List<Game>): RecyclerView.Adapter<GameAdapt
             itemView.tv_game_result.text = game.result?.name
             itemView.tv_game_date.text = game.date.toString()
 
-            when(game.playerMove) {
-                GameMoves.SCISSORS -> itemView.img_view_player_move.setImageResource(R.drawable.scissors)
-                GameMoves.PAPER -> itemView.img_view_player_move.setImageResource(R.drawable.paper)
-                GameMoves.ROCK -> itemView.img_view_player_move.setImageResource(R.drawable.rock)
-            }
-
-            when(game.computerMove) {
-                GameMoves.SCISSORS -> itemView.img_view_computer_move.setImageResource(R.drawable.scissors)
-                GameMoves.PAPER -> itemView.img_view_computer_move.setImageResource(R.drawable.paper)
-                GameMoves.ROCK -> itemView.img_view_computer_move.setImageResource(R.drawable.rock)
-            }
+            itemView.img_view_player_move.setImageResource(Game.getImageResource(game.playerMove))
+            itemView.img_view_computer_move.setImageResource(Game.getImageResource(game.computerMove))
 
             when(game.result) {
                 GameResult.WIN -> itemView.tv_game_result.setText(R.string.player_win)

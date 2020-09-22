@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.madlevel4task2.models.Game
 import com.example.madlevel4task2.models.GameMoves
-import com.example.madlevel4task2.models.GameResult
 import com.example.madlevel4task2.repository.GameRepository
 import kotlinx.android.synthetic.main.fragment_game.*
 import kotlinx.coroutines.CoroutineScope
@@ -78,22 +77,9 @@ class GameFragment : Fragment() {
 
 
     private fun displayResult(game: Game) {
-        when(game.result) {
-            GameResult.WIN -> tv_result_message.setText(R.string.win_label)
-            GameResult.DRAW-> tv_result_message.setText(R.string.draw_label)
-            GameResult.LOSE -> tv_result_message.setText(R.string.lose_label)
-        }
-
-        when(game.playerMove) {
-            GameMoves.SCISSORS -> img_view_player_move.setImageResource(R.drawable.scissors)
-            GameMoves.PAPER -> img_view_player_move.setImageResource(R.drawable.paper)
-            GameMoves.ROCK -> img_view_player_move.setImageResource(R.drawable.rock)
-        }
-
-        when(game.computerMove) {
-            GameMoves.SCISSORS -> img_view_computer_move.setImageResource(R.drawable.scissors)
-            GameMoves.PAPER -> img_view_computer_move.setImageResource(R.drawable.paper)
-            GameMoves.ROCK -> img_view_computer_move.setImageResource(R.drawable.rock)
-        }
+        tv_result_message.setText(Game.getResultString(game.result))
+        img_view_player_move.setImageResource(Game.getImageResource(game.playerMove))
+        img_view_computer_move.setImageResource(Game.getImageResource(game.computerMove))
     }
+
 }

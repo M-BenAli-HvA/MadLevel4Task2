@@ -3,6 +3,7 @@ package com.example.madlevel4task2.models
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.madlevel4task2.R
 import java.util.*
 
 
@@ -32,6 +33,27 @@ class Game(
     @ColumnInfo(name = "id")
     var id: Long? = null
 ) {
+
+    companion object {
+
+        fun getImageResource(move: GameMoves): Int {
+            return when(move) {
+                GameMoves.SCISSORS -> R.drawable.scissors
+                GameMoves.PAPER -> R.drawable.paper
+                GameMoves.ROCK -> R.drawable.rock
+            }
+        }
+
+        fun getResultString(result: GameResult?): Int {
+            return when(result) {
+                GameResult.WIN -> R.string.win_label
+                GameResult.DRAW-> R.string.draw_label
+                GameResult.LOSE -> R.string.lose_label
+                else -> return R.string.no_result
+            }
+        }
+
+    }
 
     fun startGame() {
         determineResult()
